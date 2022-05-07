@@ -31,6 +31,19 @@ h1 {color:grey;
 .result { display:none;
 }
 
+.GFG {
+            background-color: white;
+            border: 2px solid black;
+            color: green;
+            padding: 5px 10px;
+            text-align: center;
+            display: inline-block;
+            font-size: 20px;
+            margin: 10px 30px;
+            cursor: pointer;
+            text-decoration:none;
+        }
+
 footer {padding: 0px 10px;
 	padding-top:10px;
 }
