@@ -1,37 +1,34 @@
-body {background-color:black;
-	color:white;
-	font:arial;
-}
+function showMessage() {
+	document.getElementById("result").style.display = "block";
+};
 
-h1 {color:grey;
-	font:verdana;
-	padding: 0px 10px;
-}
+function compute() {
+	var principal = document.getElementById("principal").value;
+	if(parseInt(principal) < 1) {
+		alert("Enter a positive number");
+		document.getElementById("principal").focus();
+		return;
+	}
 
-.maindiv { background-color:white;
-	color:black;
-	width:400px;
-	padding:20px;
-	border-radius:25px;
-	margin:auto;
-	line-height:normal;
-}
 
-#mainform { margin:auto; 
-	line-height:30px;
-	display:table;
-}
+	var rate = document.getElementById("rate").value;
+	var years = document.getElementById("years").value;
 
-#mainform p { display: table-row; 
-}
+	var interest = principal * years * rate / 100;
 
-#mainform label { display:table-cell
-}
+	var today = new Date();
+	var yearOfWithdrawal = parseInt(today.getFullYear())+parseInt(years);
 
-.result { display:none;
-}
+	document.getElementById("depositmessage").innerHTML = ""+principal;
+	document.getElementById("interestmessage").innerHTML = ""+rate;
+	document.getElementById("amountmessage").innerHTML = ""+interest;
+	document.getElementById("yearmessage").innerHTML = ""+yearOfWithdrawal;
+	showMessage();
 
-footer {padding: 0px 10px;
-	padding-top:10px;
-}
+	return false;
+};
 
+function showRange() {
+	var rate = document.getElementById("rate").value;
+	document.getElementById("ratevalue").innerHTML = rate;
+}
